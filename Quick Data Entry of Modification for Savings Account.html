@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quick Data Entry of Modification for Savings Account</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            border-bottom: 1px solid #ccc;
+        }
+        .header div {
+            display: flex;
+            align-items: center;
+        }
+        .header div span {
+            margin-right: 10px;
+        }
+        .header div input {
+            border: 1px solid #ccc;
+            padding: 5px;
+        }
+        .form-section {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px 0;
+        }
+        .form-section .column {
+            width: 48%;
+        }
+        .form-section .column label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-section .column input,
+        .form-section .column select {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+        }
+        .form-section .column .radio-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .form-section .column .radio-group label {
+            margin-right: 10px;
+        }
+        .form-section .column .radio-group input {
+            margin-right: 5px;
+        }
+        .document-section {
+            padding: 10px 0;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .document-section h3 {
+            font-size: 16px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+
+        .input-field {
+            padding: 5px;
+            border: 1px solid #ccc;
+            width: 100%;
+            font-size: 14px;
+        }
+
+        .checkbox {
+            display: flex;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .checkbox input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        .checkbox label {
+            font-size: 14px;
+        }
+
+        /* Tab Styles */
+        .tabs {
+            overflow: hidden;
+            background-color: #f1f1f1;
+            margin-bottom: 20px;
+        }
+
+        .tabs button {
+            background-color: inherit;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            transition: 0.3s;
+            font-size: 17px;
+        }
+
+        .tabs button:hover {
+            background-color: #ddd;
+        }
+
+        .tabs button.active {
+            background-color: #ccc;
+        }
+
+        .tab-content {
+            display: none;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-top: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .form-section {
+                flex-direction: column;
+            }
+            .form-section .column {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <span>User: 1015465</span>
+                <span>Time Zone: IST</span>
+            </div>
+            <div>
+                <span>Solution: FINCORE</span>
+                <input type="text" value="Opening of KVF/NSC accounts and Closure of KVF/NSC" readonly>
+            </div>
+        </div>
+        <h2>Quick Data Entry of Modification for Savings Account</h2>
+        <form id="accountForm">
+            <div class="form-section">
+                <div class="column">
+                    <label for="accountName">Account Name*</label>
+                    <input type="text" id="accountName" name="accountName" required>
+
+                    <label for="accountOpeningDate">Account Opening Date*</label>
+                    <input type="date" id="accountOpeningDate" name="accountOpeningDate" required>
+
+                    <label for="typeOfAccount">Type of Account*</label>
+                    <select id="typeOfAccount" name="typeOfAccount" required>
+                        <option value="">Select Account Type</option>
+                        <option value="Self">Self</option>
+                    </select>
+
+                    <label for="accountHolderType">Account Holder Type*</label>
+                    <select id="accountHolderType" name="accountHolderType" required>
+                        <option value="">Select Holder Type</option>
+                        <option value="Single">Single</option>
+                    </select>
+
+                    <label for="schemeType">Scheme Type*</label>
+                    <select id="schemeType" name="schemeType" required>
+                        <option value="">Select Scheme</option>
+                        <option value="Savings">Savings</option>
+                        <option value="Term Deposit">Term Deposit</option>
+                    </select>
+
+                    <label for="facilitiesAvailed">Facilities Availed*</label>
+                    <div class="checkbox-group">
+                        <input type="checkbox" id="checkbook" name="facilitiesAvailed" value="Checkbook">
+                        <label for="checkbook">Checkbook</label><br>
+                        <input type="checkbox" id="atmCard" name="facilitiesAvailed" value="ATM Card">
+                        <label for="atmCard">ATM Card</label><br>
+                        <input type="checkbox" id="internetBanking" name="facilitiesAvailed" value="Internet Banking">
+                        <label for="internetBanking">Internet Banking</label><br>
+                        <input type="checkbox" id="mobileBanking" name="facilitiesAvailed" value="Mobile Banking">
+                        <label for="mobileBanking">Mobile Banking</label>
+                    </div>
+
+                    <!-- Additional Fields as per your original form -->
+                    <!-- ... -->
+                </div>
+                <div class="column">
+                    <!-- Continue adding fields as per your requirements -->
+                    <!-- Example: -->
+                    <label for="nameOfApplicant">Name of Applicant*</label>
+                    <input type="text" id="nameOfApplicant" name="nameOfApplicant" required>
+
+                    <label for="dateOfBirth">Date of Birth*</label>
+                    <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+
+                    <label for="gender">Gender*</label>
+                    <select id="gender" name="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Other</option>
+                    </select>
+
+                    <label for="aadhaarNumber">Aadhaar Number*</label>
+                    <input type="text" id="aadhaarNumber" name="aadhaarNumber" required>
+
+                    <label for="panNumber">PAN Number*</label>
+                    <input type="text" id="panNumber" name="panNumber" required>
+
+                    <label for="presentAddress">Present Address*</label>
+                    <input type="text" id="presentAddress" name="presentAddress" required>
+
+                    <label for="permanentAddress">Permanent Address*</label>
+                    <input type="text" id="permanentAddress" name="permanentAddress" required>
+
+                    <label for="email">Email ID*</label>
+                    <input type="email" id="email" name="email" required>
+
+                    <label for="accountOpeningMode">Account Opening Mode*</label>
+                    <select id="accountOpeningMode" name="accountOpeningMode" required>
+                        <option value="">Select Mode</option>
+                        <option value="Normal">Normal</option>
+                        <option value="Urgent">Urgent</option>
+                    </select>
+
+                    <label for="signatureUpload">Upload Signature*</label>
+                    <input type="file" id="signatureUpload" name="signatureUpload" accept="image/*" required>
+
+                    <label for="photographUpload">Upload Photograph*</label>
+                    <input type="file" id="photographUpload" name="photographUpload" accept="image/*" required>
+
+                    <!-- Add more fields as needed -->
+                </div>
+            </div>
+
+            <!-- Document Upload Tabs -->
+            <h3>Document Uploads</h3>
+            <div class="tabs">
+                <button type="button" class="tablink active" onclick="openTab(event, 'aadhaar')">Aadhaar</button>
+                <button type="button" class="tablink" onclick="openTab(event, 'pan')">PAN</button>
+            </div>
+
+            <!-- Aadhaar Tab Content -->
+            <div id="aadhaar" class="tab-content active">
+                <h4>Aadhaar Details</h4>
+                <div class="form-group">
+                    <label for="aadhaarFront">Upload Aadhaar Front Image*</label>
+                    <input type="file" id="aadhaarFront" name="aadhaarFront" accept="image/*" required>
+                </div>
+                <div class="form-group">
+                    <label for="aadhaarBack">Upload Aadhaar Back Image*</label>
+                    <input type="file" id="aadhaarBack" name="aadhaarBack" accept="image/*" required>
+                </div>
+            </div>
+
+            <!-- PAN Tab Content -->
+            <div id="pan" class="tab-content">
+                <h4>PAN Details</h4>
+                <div class="form-group">
+                    <label for="panFront">Upload PAN Front Image*</label>
+                    <input type="file" id="panFront" name="panFront" accept="image/*" required>
+                </div>
+            </div>
+
+            <!-- Nominee Details Section -->
+            <h3>Nominee Details</h3>
+            <div class="form-section">
+                <div class="column">
+                    <h4>Nominee</h4>
+                    <label for="nomineeName">Name of the Nominee*</label>
+                    <input type="text" id="nomineeName" name="nomineeName" required>
+
+                    <label for="nomineeRelation">Relation to Nominee*</label>
+                    <input type="text" id="nomineeRelation" name="nomineeRelation" required>
+
+                    <label for="nomineeGender">Gender*</label>
+                    <select id="nomineeGender" name="nomineeGender" required>
+                        <option value="">Select Gender</option>
+                        <option value="M">Male</option>
+                        <option value="F">Female</option>
+                        <option value="O">Other</option>
+                    </select>
+
+                    <label for="nomineeDOB">Date of Birth*</label>
+                    <input type="date" id="nomineeDOB" name="nomineeDOB" required>
+
+                    <label for="nomineeAadhaar">Aadhaar Number*</label>
+                    <input type="text" id="nomineeAadhaar" name="nomineeAadhaar" required>
+
+                    <label for="nomineePAN">PAN Number*</label>
+                    <input type="text" id="nomineePAN" name="nomineePAN" required>
+
+                    <label for="nomineePermanentAddress">Permanent Address*</label>
+                    <input type="text" id="nomineePermanentAddress" name="nomineePermanentAddress" required>
+
+                    <label for="nomineePhone">Telephone No./Mobile No.*</label>
+                    <input type="text" id="nomineePhone" name="nomineePhone" required>
+
+                    <label for="nomineeEmail">Email ID*</label>
+                    <input type="email" id="nomineeEmail" name="nomineeEmail" required>
+                </div>
+            </div>
+
+            <!-- Additional Sections as per your original form -->
+            <!-- Documents, Guardian Details, etc. -->
+
+            <div id="successMessage" style="display: none; color: green; font-weight: bold; margin-top: 20px;">
+                Form submitted successfully!
+            </div>
+
+            <!-- Submit button -->
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Firebase SDKs -->
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-firestore-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-storage-compat.js"></script>
+
+    <script>
+        // Tab functionality
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tab-content");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].classList.remove("active");
+            }
+            tablinks = document.getElementsByClassName("tablink");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].classList.remove("active");
+            }
+            document.getElementById(tabName).classList.add("active");
+            evt.currentTarget.classList.add("active");
+        }
+
+        // Initialize Firebase
+        // TODO: Replace the following with your app's Firebase project configuration
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_AUTH_DOMAIN",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_STORAGE_BUCKET",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+        const storage = firebase.storage();
+
+        document.getElementById('accountForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            // Collect form data
+            const form = e.target;
+            const formData = new FormData(form);
+            const data = {};
+
+            formData.forEach((value, key) => {
+                data[key] = value;
+            });
+
+            // Handle file uploads
+            const signatureFile = form.signatureUpload.files[0];
+            const photographFile = form.photographUpload.files[0];
+            const aadhaarFrontFile = form.aadhaarFront.files[0];
+            const aadhaarBackFile = form.aadhaarBack.files[0];
+            const panFrontFile = form.panFront.files[0];
+            // Nominee file uploads have been removed
+
+            // Function to upload a file and return its URL
+            const uploadFile = async (file, path) => {
+                if (!file) return null;
+                const storageRef = storage.ref(path);
+                await storageRef.put(file);
+                return await storageRef.getDownloadURL();
+            };
+
+            try {
+                // Upload general files
+                data.signatureURL = await uploadFile(signatureFile, `signatures/${signatureFile.name}`);
+                data.photographURL = await uploadFile(photographFile, `photographs/${photographFile.name}`);
+
+                // Upload Aadhaar files
+                if (aadhaarFrontFile && aadhaarBackFile) {
+                    data.aadhaarFrontURL = await uploadFile(aadhaarFrontFile, `aadhaar/front/${aadhaarFrontFile.name}`);
+                    data.aadhaarBackURL = await uploadFile(aadhaarBackFile, `aadhaar/back/${aadhaarBackFile.name}`);
+                }
+
+                // Upload PAN files
+                if (panFrontFile) {
+                    data.panFrontURL = await uploadFile(panFrontFile, `pan/front/${panFrontFile.name}`);
+                }
+
+                // Save Nominee Details
+                data.nominee = {
+                    name: data.nomineeName,
+                    relation: data.nomineeRelation,
+                    gender: data.nomineeGender,
+                    dob: data.nomineeDOB,
+                    aadhaarNumber: data.nomineeAadhaar,
+                    panNumber: data.nomineePAN,
+                    permanentAddress: data.nomineePermanentAddress,
+                    phone: data.nomineePhone,
+                    email: data.nomineeEmail
+                };
+
+                // Remove individual nominee fields from data
+                delete data.nomineeName;
+                delete data.nomineeRelation;
+                delete data.nomineeGender;
+                delete data.nomineeDOB;
+                delete data.nomineeAadhaar;
+                delete data.nomineePAN;
+                delete data.nomineePermanentAddress;
+                delete data.nomineePhone;
+                delete data.nomineeEmail;
+
+                // Save data to Firestore
+                await db.collection('accounts').add(data);
+                document.getElementById('successMessage').style.display = 'block';
+                form.reset();
+                // Reset tabs to default
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove("active"));
+                document.getElementById('aadhaar').classList.add("active");
+                document.querySelectorAll('.tablink').forEach(btn => btn.classList.remove("active"));
+                document.querySelector('.tablink').classList.add("active");
+            } catch (error) {
+                console.error("Error adding document: ", error);
+                alert('There was an error submitting the form.');
+            }
+        });
+    </script>
+</body>
+</html>
